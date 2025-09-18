@@ -52,9 +52,10 @@ packages:
   custom_divider:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      name: custom_divider
+      sha256: b360804a70a5ad04a34986dbf2f387a91f287dbf4f1ef8c81ea1ad4f9ce2f0a7
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   fake_async:
     dependency: transitive

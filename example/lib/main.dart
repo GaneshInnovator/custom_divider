@@ -1,7 +1,6 @@
 import 'package:custom_divider/custom_divider.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Custom Divider'),
     );
   }
 }
@@ -56,18 +56,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Color(0xFFF4F4F4),
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
@@ -87,62 +76,220 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-                child: CustomDivider(
-                  orientation: DividerOrientation.HORIZONTAL,
-                  style: DividerStyle.DOTTED,
-                  color: Colors.red,
-                  dashWidth: 1,
-                  thickness: 2,
-                )
-            ),
-            Container(
-              child: CustomDivider(
-                orientation: DividerOrientation.HORIZONTAL,
-                style: DividerStyle.DASHED,
-                color: Colors.red,
-                dashWidth: 1,
-                thickness: 2,
-                padTop: 10,
-                padBottom: 10,
-              )
-            ),
-            Container(
-                child: CustomDivider(
-                  orientation: DividerOrientation.HORIZONTAL,
-                  style: DividerStyle.SOLID,
-                  color: Colors.red,
-                  dashWidth: 1,
-                  thickness: 2,
-                )
-            )
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+            //
+            // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
+            // action in the IDE, or press "p" in the console), to see the
+            // wireframe for each widget.
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Vertical Dividers" ,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 21
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                  height: 120,
+                  padding: EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DOTTED,
+                        dashWidth: 10,
+                        thickness: 2,
+                        color: Colors.green,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.SOLID,
+                        dashWidth: 10,
+                        thickness: 2,
+                        color: Colors.grey,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DOTTED,
+                        dashWidth: 10,
+                        thickness: 10,
+                        color: Colors.brown,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DASHED,
+                        dashWidth: 10,
+                        thickness: 2,
+                        color: Colors.brown,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DASHED,
+                        dashWidth: 8,
+                        thickness: 2,
+                        color: Colors.red,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DASHED,
+                        dashWidth: 8,
+                        thickness: 4,
+                        color: Colors.black,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.DASHED,
+                        dashWidth: 8,
+                        thickness: 8,
+                        color: Colors.greenAccent,
+                        padRight: 40,
+                      ),
+                      CustomDivider(
+                        orientation: DividerOrientation.VERTICAL,
+                        style: DividerStyle.SOLID,
+                        dashWidth: 8,
+                        thickness: 5,
+                      ),
+                    ],
+                  )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("Horizontal Dividers" ,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 21
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.DOTTED,
+                          dashWidth: 10,
+                          thickness: 2,
+                          color: Colors.black,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.DASHED,
+                          dashWidth: 10,
+                          thickness: 2,
+                          color: Colors.green,
+                          padTop: 50,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.DASHED,
+                          dashWidth: 25,
+                          thickness: 2,
+                          color: Colors.green,
+                          padTop: 50,
+                          padBottom: 50,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.DASHED,
+                          dashWidth: 25,
+                          thickness: 8,
+                          color: Colors.grey,
+                          padBottom: 50,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.SOLID,
+                          dashWidth: 1,
+                          thickness: 2,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.DASHED,
+                          color: Colors.red,
+                          dashWidth: 1,
+                          thickness: 5,
+                          padTop: 50,
+                          padBottom: 50,
+                        )
+                    ),
+                    Container(
+                        child: CustomDivider(
+                          orientation: DividerOrientation.HORIZONTAL,
+                          style: DividerStyle.SOLID,
+                          color: Colors.blue,
+                          dashWidth: 1,
+                          thickness: 2,
+                          padBottom: 50,
+                        )
+                    ),
+                    Container(
+                      child: CustomDivider(
+                        orientation: DividerOrientation.HORIZONTAL,
+                        style: DividerStyle.SOLID,
+                        dashWidth: 8,
+                        thickness: 5,
+                        color: Colors.brown,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
