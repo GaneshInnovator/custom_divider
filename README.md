@@ -2,10 +2,11 @@
 
 A Flutter package to create customizable dividers with multiple styles like **solid, dotted, dashed**, along with options to change **thickness, color, and padding**.
 
-![Custom Divider Banner](https://github.com/user-attachments/assets/ddebd75c-4c2d-4872-b98f-4e8a8327d9e9)
+![Custom Divider Banner](https://raw.githubusercontent.com/GaneshInnovator/Image-Quality-Enhancement/refs/heads/main/figures/Untitled%20(800%20x%20400%20px).png)
 
+## Preview
 
-![Preview](https://github.com/user-attachments/assets/2552e9e8-a3ce-421e-90e0-23e3bed6829f)
+![Preview](https://github.com/GaneshInnovator/Image-Quality-Enhancement/blob/main/figures/1000141887.jpg?raw=true)
 
 ---
 
@@ -24,6 +25,6 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_divider: ^0.0.1
+  custom_divider: ^0.0.3
 
 flutter pub get
