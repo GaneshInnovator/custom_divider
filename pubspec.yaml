@@ -1,6 +1,6 @@
 name: custom_divider
-description: "A Custom Divider Flutter package project."
-version: 0.0.2
+description: "A Flutter package to create customizable dividers with multiple styles like **solid, dotted, dashed**, along with options to change **thickness, color, and padding**."
+version: 0.0.3
 repository: https://github.com/GaneshInnovator/custom_divider
 
 environment:
